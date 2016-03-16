@@ -42,10 +42,16 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.BrLabel = new System.Windows.Forms.Label();
+            this.rotateLabel = new System.Windows.Forms.Label();
+            this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -71,14 +77,14 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -172,21 +178,65 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-
+            // trackBar1
             // 
-            // Form1
+            this.trackBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.trackBar1.Location = new System.Drawing.Point(0, 485);
+            this.trackBar1.Maximum = 100;
+            this.trackBar1.Minimum = -100;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(1065, 45);
+            this.trackBar1.TabIndex = 2;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
-            this.ClientSize = new System.Drawing.Size(1065, 509);
+            // BrLabel
+            // 
+            this.BrLabel.AutoSize = true;
+            this.BrLabel.Location = new System.Drawing.Point(987, 484);
+            this.BrLabel.Name = "BrLabel";
+            this.BrLabel.Size = new System.Drawing.Size(56, 13);
+            this.BrLabel.TabIndex = 3;
+            this.BrLabel.Text = "Brightness";
+            // 
+            // rotateLabel
+            // 
+            this.rotateLabel.AutoSize = true;
+            this.rotateLabel.Location = new System.Drawing.Point(911, 435);
+            this.rotateLabel.Name = "rotateLabel";
+            this.rotateLabel.Size = new System.Drawing.Size(39, 13);
+            this.rotateLabel.TabIndex = 5;
+            this.rotateLabel.Text = "Rotate";
+            this.rotateLabel.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // trackBar2
+            // 
+            this.trackBar2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.trackBar2.Location = new System.Drawing.Point(0, 440);
+            this.trackBar2.Maximum = 360;
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Size = new System.Drawing.Size(1065, 45);
+            this.trackBar2.TabIndex = 4;
+            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
+            // 
+            // brValue
+            // 
+            this.ClientSize = new System.Drawing.Size(1065, 530);
+            this.Controls.Add(this.rotateLabel);
+            this.Controls.Add(this.trackBar2);
+            this.Controls.Add(this.BrLabel);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "brValue";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,6 +259,10 @@
         private System.Windows.Forms.ToolStripMenuItem rotateChannelsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem invertToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label BrLabel;
+        private System.Windows.Forms.TrackBar trackBar2;
+        private System.Windows.Forms.Label rotateLabel;
     }
 }
 

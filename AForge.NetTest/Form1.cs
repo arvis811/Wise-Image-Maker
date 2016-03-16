@@ -66,5 +66,30 @@ namespace AForge.NetTest
         {
             pictureBox2.Image.Save(@"C:\Users\arvn\Desktop\aweSomePic.jpg", ImageFormat.Jpeg);
         }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            BrLabel.Text = trackBar1.Value.ToString();
+            int br = trackBar1.Value;
+            if (pictureBox1.Image != null)
+            {
+                BrightnessCorrection brc = new BrightnessCorrection(br);
+                pictureBox2.Image = brc.Apply((Bitmap)pictureBox1.Image.Clone());
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            rotateLabel.Text = trackBar2.Value.ToString();
+            Bitmap image = (Bitmap)pictureBox1.Image;
+            RotateBilinear rotate = new RotateBilinear(trackBar2.Value, true);
+            Bitmap image2 = rotate.Apply(image);
+            pictureBox2.Image = image2;
+        }
     }
 }
